@@ -10,6 +10,7 @@ from sqlalchemy.sql.schema import ForeignKey, PrimaryKeyConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_cors import CORS
 from flask_marshmallow import Marshmallow
+import os
 
 app = Flask(__name__)
 #postgresql://postgres:password@localhost/leanarc
@@ -284,7 +285,7 @@ if __name__ == '__main__':
 
     app.debug=False 
     #run the app
-    app.run()
+    app.run(host='0.0.0.0', debug=False, port=int(os.environ.get("PORT", 5000)))
 
 
 
