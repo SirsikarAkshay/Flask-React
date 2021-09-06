@@ -8,18 +8,18 @@ from marshmallow import fields
 from sqlalchemy.orm.session import Session
 from sqlalchemy.sql.schema import ForeignKey, PrimaryKeyConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
-#from flask_cors import CORS
+from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://azrlfnltdwrany:e2a5ce5b8693b0ef7dab37bfdf5569eef27ee328fb78110c30e8f13f988d515d@ec2-54-156-60-12.compute-1.amazonaws.com:5432/daqn47k12p75k7'
+#postgresql://postgres:password@localhost/leanarc
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://gcyslrrdfitkdp:ba25ee052fdcc5d2fddf883406722d038601c0379331bfa95d074d3c7f9d0672@ec2-54-73-152-36.eu-west-1.compute.amazonaws.com:5432/d1l1m4pbvp7cdq'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #Setup the flask-jwt-extended extension
 app.config['JWT_SECRET_KEY'] = "super_secret"
 
-#cors = CORS(app)
+cors = CORS(app)
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
@@ -282,6 +282,7 @@ if __name__ == '__main__':
     #Create the user table.
     db.create_all()
 
+    app.debug=False 
     #run the app
     app.run()
 

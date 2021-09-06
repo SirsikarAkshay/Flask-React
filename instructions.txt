@@ -1,0 +1,17 @@
+1. After unzipping open the folder in a text-editor like VS Code.
+2. Navigate to backend folder
+3. Run the command 
+    - pip install -r requirements.txt (install pip if not already done)
+4. navigate to the frontend folder.
+5. Run the following commands.
+    - npm install react-router
+    - npm install react router-dom
+
+6. Run the app.py file from backend folder
+7. Navigate to the folder frontend
+8. Run the command
+    - npm start
+
+That should start the app.
+
+9. While registering new user make sure that isAdmin section is either true or false.
