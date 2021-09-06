@@ -283,7 +283,7 @@ if __name__ == '__main__':
     db.create_all()
 
     #run the app
-    app.run(debug=True)
+    app.run()
 
 
 
