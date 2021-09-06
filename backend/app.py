@@ -8,7 +8,7 @@ from marshmallow import fields
 from sqlalchemy.orm.session import Session
 from sqlalchemy.sql.schema import ForeignKey, PrimaryKeyConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_cors import CORS
+#from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #Setup the flask-jwt-extended extension
 app.config['JWT_SECRET_KEY'] = "super_secret"
 
-cors = CORS(app)
+#cors = CORS(app)
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
