@@ -14,7 +14,7 @@ import os
 
 app = Flask(__name__)
 #postgresql://postgres:password@localhost/leanarc
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost/leanarc'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'YOUR_POSTGRES_URL'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #Setup the flask-jwt-extended extension
